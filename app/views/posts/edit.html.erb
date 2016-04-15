@@ -1,5 +1,5 @@
 <%=  form_tag(posts_edit_path, method: "patch") do %>
-    <div class="post-field">
+    <div class="post-field">	#method: :patch
         <%= label_tag("Title: ") %> <br/>
         <%= text_field_tag("title") %>
     </div>

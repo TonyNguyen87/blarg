@@ -3,9 +3,12 @@
 <h1>ALL OF THE BLOG POSTINGS</h1>
 
 <ul class="posts">
-  <% posts.each do |post| %>
+  <% @posts.each do |post| %>
     <li class="blog-post">Title: <%= post.title %>
-    	<%= link_to("Edit this post", posts_edit_path(post)) %>
+    	<%= link_to("Edit this post", posts_edit_path(id: post.id)) %>
     	<%= link_to("View this post", posts_show_path(post)) %></li>
+    	<%= link_to("Delete this post", posts_edit_path(id: post.id), method: :delete) %>
   <% end %>
 </ul>
+
+    <nav><%= paginate @posts %></nav>
